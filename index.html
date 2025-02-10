@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umair Khan | Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <h2>Umair Khan</h2>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project-section">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="image">
+            <img src="/images/1739107176963.JPG" alt="Person photo">
+        </div>
+        <h2>Hello, I'm <span>Umair Khan</span></h2>
+        <p>A Passaionate web Developer</p>
+
+        <a href="#project-section">View Projects</a>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Fresh graduate in Computer Science with a strong foundation in web development. Experienced in both web and desktop application development, with a focus on creating efficient and scalable solutions.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="card-container">
+            <div class="cards">
+                    <h5>Programming Languages</h5>
+                <div class="card-items">
+                    <ul>
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cards">
+                <h5>Desktop Development</h5>
+            <div class="card-items">
+                <ul>
+                    <li>C# Window Form Application</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cards">
+            <h5>Web Development</h5>
+        <div class="card-items">
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>BOOTSTRAP</li>
+                <li>ASP .NET MVC</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cards">
+        <h5>Database</h5>
+    <div class="card-items">
+        <ul>
+            <li>MS SQL</li>
+        </ul>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <section id="project-section">
+        <h2>Projects</h2>
+    
+        <div class="project-container">
+            
+            <div class="project">
+                <div class="project-overview">
+                    <div class="gallery">
+                        <figure>
+                            <img src="/images/1739107176963.JPG" alt="Admin Dashboard" onclick="openImage(this)">
+                            <figcaption>Admin Dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/images/1739107176963.JPG" alt="User Dashboard" onclick="openImage(this)">
+                            <figcaption>User Dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/images/1739107176963.JPG" alt="Product Page" onclick="openImage(this)">
+                            <figcaption>Product Page</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <a href="https://github.com/your-repo" target="_blank">
+                        <button class="btn">View on GitHub</button>
+                    </a>
+                </div>
+                <div class="project-details">
+                    <h5>Online Shopping</h5>
+                    <p>Short project description...</p>
+                </div>
+            </div>
+    
+            <div class="project">
+                <div class="project-overview">
+                    <div class="gallery">
+                        <figure>
+                            <img src="/images/1739107176963.JPG" alt="Admin Dashboard" onclick="openImage(this)">
+                            <figcaption>Admin Dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/images/1739107176963.JPG" alt="User Dashboard" onclick="openImage(this)">
+                            <figcaption>User Dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/images/1739107176963.JPG" alt="Product Page" onclick="openImage(this)">
+                            <figcaption>Product Page</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <a href="https://github.com/your-repo" target="_blank">
+                        <button class="btn">View on GitHub</button>
+                    </a>
+                </div>
+                <div class="project-details">
+                    <h5>Another Project</h5>
+                    <p>Short project description...</p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <h5>Email: <span>uk3467869@gmail.com</span></h5>
+        <h5>LinkedIn: <a href="https://linkedin.com/in/umair-khan-b93362246">Profile</a></h5>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Umair. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    function openImage(img) {
+        window.open(img.src);
+    }
+</script>

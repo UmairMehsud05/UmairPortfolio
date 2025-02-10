@@ -1,0 +1,570 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: rgba(198, 233, 233, 0.591);
+   
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Headings */
+h1 { font-family: 'Poppins', sans-serif; font-size: 48px; font-weight: 700; }
+h2 { font-family: 'Poppins', sans-serif; font-size: 38px; font-weight: 600; }
+h3 { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 500; }
+h4 { font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 400; }
+h5 { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 400; }
+h6 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 400; }
+
+/* Paragraphs */
+p { font-family: 'Inter', sans-serif; font-size: 18px; }
+
+/* Navigation */
+nav ul li a { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; }
+
+/* Buttons */
+button { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; }
+
+
+.header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    padding: 15px 50px;
+}
+
+
+.header h2{
+    color: #00aaff;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin-right: 35px;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover{
+    color: #00aaff;
+}
+
+#hero{
+    width: 100%;
+    height: 100vh;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(196, 206, 216, 0.683);
+    border-radius: 30px;
+}
+
+#hero .image{
+    width: 25%;
+    max-width: 200px;
+    aspect-ratio: 1/1;
+    border: 2px solid #00aaff;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#hero .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero a{
+    background-color: black;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 35px;
+    transition: 0.3s;
+}
+
+#hero .image:hover{
+    width: 40vw;
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 0;
+}
+
+#hero a:hover{
+    background-color: rgba(196, 206, 216, 0.683);
+    color: black;
+    border: 2px solid black;
+}
+
+section{
+    padding: 10vh 10%;
+    text-align: center;
+    scroll-margin-top: 50px;
+}
+
+section:not(#hero) h2{
+    margin-bottom: 40px;
+}
+
+Section h2{
+    color: #00aaff;
+}
+
+#about{
+    width: 100%;
+}
+
+
+#skills{
+    width: 100%;
+    background-color: rgba(196, 206, 216, 0.683);
+    border-radius: 30px;
+}
+
+
+#skills .card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#skills .cards{
+    width: 35vw;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: color 2s, background-color 2s;
+}
+
+#skills .card-items ul li{
+    width: 100%;
+    background-color: rgba(228, 221, 221, 0.176);
+    margin: 5px;
+    padding: 7px;
+    border-radius: 10px;
+    list-style: none;
+    text-align: left;
+}
+
+#skills .cards:hover, .card-items ul li:hover{
+    background-color: rgba(228, 221, 221, 0.176);
+    border: 2px solid black;
+    color: black;
+}
+
+
+
+#project-section{
+    width: 100%;
+    height: auto;
+}
+
+#project-section h2{
+    margin-bottom: 50px;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.project {
+    width: 45%;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    color: white;
+}
+
+.project-overview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+    text-align: center;
+}
+.gallery figure {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.gallery img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+.gallery figcaption {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 10px;
+    display: block;
+    padding: 8px 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.btn:hover {
+    background: #0056b3;
+}
+
+
+#contact{
+        width: 100%;
+        background-color: rgba(196, 206, 216, 0.683);
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+}
+
+#contact a{
+    text-decoration: none;
+    color: #00aaff;
+}
+
+footer{
+    height: 50px;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .header h2 {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero {
+        height: auto;
+        padding: 10vh 5%;
+    }
+
+    #hero .image {
+        width: 50%;
+        max-width: 150px;
+    }
+
+    #hero h2 {
+        font-size: 32px;
+    }
+
+    #hero p {
+        font-size: 18px;
+    }
+
+    #about {
+        padding: 8vh 5%;
+    }
+
+    #about p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    
+    #skills .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #skills .cards {
+        width: 90%;
+    }
+
+    
+    .project {
+        width: 90%;
+    }
+
+    
+    #contact {
+        text-align: center;
+        padding: 8vh 5%;
+    }
+
+    
+    h1 { font-size: 40px; }
+    h2 { font-size: 32px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 24px; }
+    h5 { font-size: 20px; }
+    p { font-size: 16px; }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* Navigation */
+    .header {
+        position: relative;
+        height: auto;
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 3px solid #00aaff; /* Stretches across full width */
+        width: 100vw; /* Ensures full viewport width */
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure full width */
+    }
+    
+    nav h2 {
+        text-align: center;
+        width: 100%; /* Ensures full width */
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        text-align: center; /* Ensures text alignment */
+    }
+    
+    nav ul li {
+        width: 100%; 
+        text-align: center; /* Centers text inside li */
+        padding: 10px 0;
+    }
+    
+    nav ul li a {
+        display: block; /* Makes sure links take full width */
+        text-align: center;
+    }
+    
+    nav ul li:not(:last-child) {
+        border-bottom: 1px solid #00aaff;
+        width: 100%; /* Ensures the border fully stretches */
+    }
+    
+    
+
+    /* Hero Section */
+    #hero {
+        width: 100%;
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    #hero .image {
+        width: 50%;
+        max-width: 150px;
+    }
+
+    #hero h2 {
+        font-size: 28px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+
+    #hero a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    /* About Section */
+    #about {
+        width: 100%;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    #about p {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    /* Skills Section */
+    #skills {
+        width: 100%;
+        padding: 50px 20px;
+    }
+
+    #skills .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #skills .cards {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Projects Section */
+    #project-section {
+        width: 100%;
+        padding: 50px 20px;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Section */
+    /* Contact Section Fix */
+#contact {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+#contact p {
+    font-size: 14px; /* Reduce font size */
+    white-space: nowrap; /* Prevents line breaks */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds '...' if text is too long */
+}
+
+#contact a {
+    font-size: 14px;
+    word-break: break-word; /* Ensures the email wraps properly if needed */
+}
+
+    /* Footer */
+    footer p {
+        font-size: 14px;
+    }
+
+    /* Responsive Font Sizes */
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4, h5, h6 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    
+    #hero h2 {
+        font-size: 24px;
+    }
+
+    #hero p {
+        font-size: 14px;
+    }
+
+    #hero .image {
+        width: 70%;
+    }
+
+    
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
+    p { font-size: 12px; }
+}
