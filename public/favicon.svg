@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0d10"/>
+      <stop offset="100%" stop-color="#161c24"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8aa4c0"/>
+      <stop offset="100%" stop-color="#355a78"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <!-- U -->
+  <path d="M16 22v12c0 5 3.5 8.5 8.5 8.5s8.5-3.5 8.5-8.5V22h-4.5v12c0 2.5-1.8 4.2-4 4.2s-4-1.7-4-4.2V22H16z" fill="url(#accentGrad)"/>
+  <!-- K -->
+  <path d="M37 22v20.5h4.5v-8.8l6.8 8.8h5.8l-8.2-10.4 7.6-10.1h-5.6l-6.4 8.7V22H37z" fill="#ffffff"/>
+  <!-- Accent Dot -->
+  <circle cx="53" cy="40.5" r="2.2" fill="#10b981"/>
+</svg>
