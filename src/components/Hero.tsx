@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { profile } from '../data/content'
 import { EASE, ensureGsap, prefersReducedMotion } from '../lib/motion'
 import { AmbientBackdrop } from './AmbientBackdrop'
+import { HeroTerminal } from './HeroTerminal'
 import { TiltCard } from './TiltCard'
 
 const STACK_MARQUEE = [
@@ -17,6 +18,16 @@ const STACK_MARQUEE = [
   'Clean Architecture',
   'CQRS / MediatR',
   'JWT & REST APIs',
+]
+
+const CORE_INDICATORS = [
+  '.NET 10',
+  'ASP.NET Core',
+  'Angular',
+  'Blazor',
+  'WPF (MVVM)',
+  'SQL Server',
+  'Clean Architecture',
 ]
 
 const STATS = [
@@ -76,6 +87,17 @@ export function Hero() {
           '-=0.4',
         )
         .from(
+          '.hero-tech-chips > *',
+          {
+            opacity: 0,
+            y: 15,
+            duration: 0.5,
+            stagger: 0.05,
+            ease: EASE,
+          },
+          '-=0.4',
+        )
+        .from(
           '.hero-cta-group > *',
           {
             opacity: 0,
@@ -84,7 +106,17 @@ export function Hero() {
             stagger: 0.1,
             ease: EASE,
           },
-          '-=0.4',
+          '-=0.3',
+        )
+        .from(
+          '.hero-terminal-card',
+          {
+            opacity: 0,
+            x: 25,
+            duration: 0.8,
+            ease: 'power3.out',
+          },
+          '-=0.6',
         )
         .from(
           '.hero-stat-card',
@@ -95,7 +127,7 @@ export function Hero() {
             stagger: 0.08,
             ease: 'power2.out',
           },
-          '-=0.3',
+          '-=0.4',
         )
     }, root)
 
@@ -109,57 +141,73 @@ export function Hero() {
       <AmbientBackdrop className="hero-ambient" />
 
       <div className="container hero-container">
-        <div className="hero-content">
-          <div className="hero-badge-pill">
-            <span className="live-beacon">
-              <span className="live-beacon-core" />
-              <span className="live-beacon-ring" />
-            </span>
-            <span>Available for Full-Time Roles · Islamabad / Remote</span>
+        <div className="hero-split-grid">
+          {/* Left Column: Typography & Recruiter Scan */}
+          <div className="hero-split-left">
+            <div className="hero-badge-pill">
+              <span className="live-beacon">
+                <span className="live-beacon-core" />
+                <span className="live-beacon-ring" />
+              </span>
+              <span>Available for Full-Time Roles · Islamabad / Remote</span>
+            </div>
+
+            <h1 className="hero-headline-name">
+              Umair <span className="hero-accent-name">Khan</span>
+            </h1>
+
+            <div className="hero-role-tag">
+              <span className="hero-role-bullet">/</span>
+              <span>Full Stack .NET Developer</span>
+            </div>
+
+            <p className="hero-description">{profile.heroSupport}</p>
+
+            <div className="hero-tech-chips" aria-label="Core Technologies">
+              {CORE_INDICATORS.map((tech) => (
+                <span key={tech} className="hero-tech-chip">
+                  <span className="chip-dot" />
+                  <span>{tech}</span>
+                </span>
+              ))}
+            </div>
+
+            <div className="hero-cta-group">
+              <a className="btn btn-primary btn-magnetic" href="#work">
+                <span>View Selected Work</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a className="btn btn-ghost btn-magnetic" href="#contact">
+                <span>Contact Me</span>
+              </a>
+              <a className="btn btn-ghost btn-magnetic" href={profile.cvHref} download>
+                <span>Download CV</span>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 13h10" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          <h1 className="hero-headline-name">
-            Umair <span className="hero-accent-name">Khan</span>
-          </h1>
-
-          <div className="hero-role-tag">
-            <span className="hero-role-bullet">/</span>
-            <span>Full Stack .NET Developer</span>
-            <span className="hero-role-stack">ASP.NET Core · Angular · Blazor · WPF · SQL Server</span>
-          </div>
-
-          <p className="hero-description">
-            {profile.heroSupport}
-          </p>
-
-          <div className="hero-cta-group">
-            <a className="btn btn-primary btn-magnetic" href="#work">
-              <span>View Selected Work</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-            <a className="btn btn-ghost btn-magnetic" href="#contact">
-              <span>Contact Me</span>
-            </a>
-            <a className="btn btn-ghost btn-magnetic" href={profile.cvHref} download>
-              <span>Download CV</span>
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 13h10" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
-
-          <div className="hero-stats-grid">
-            {STATS.map((stat) => (
-              <TiltCard key={stat.label} className="hero-stat-card" maxTilt={6}>
-                <span className="stat-value">{stat.value}</span>
-                <span className="stat-label">{stat.label}</span>
-              </TiltCard>
-            ))}
+          {/* Right Column: Compact Developer Console / Pipeline Preview */}
+          <div className="hero-split-right">
+            <HeroTerminal />
           </div>
         </div>
 
+        {/* Full-Width 4-Stat Metric Strip */}
+        <div className="hero-stats-grid">
+          {STATS.map((stat) => (
+            <TiltCard key={stat.label} className="hero-stat-card" maxTilt={4}>
+              <span className="stat-value">{stat.value}</span>
+              <span className="stat-label">{stat.label}</span>
+            </TiltCard>
+          ))}
+        </div>
+
+        {/* Stack Marquee Ribbon */}
         <div className="hero-marquee-wrap" aria-hidden="true">
           <div className="arch-marquee-track">
             {marqueeItems.map((item, idx) => (
@@ -171,4 +219,3 @@ export function Hero() {
     </section>
   )
 }
-
