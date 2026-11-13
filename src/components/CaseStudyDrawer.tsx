@@ -158,3 +158,4 @@ export function CaseStudyDrawer({ project, onClose }: CaseStudyDrawerProps) {
     </div>
   )
 }
+

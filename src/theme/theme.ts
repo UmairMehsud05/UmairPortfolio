@@ -1,6 +1,6 @@
 export type Theme = 'dark' | 'light'
 
-export const THEME_STORAGE_KEY = 'umair-portfolio-theme-v2'
+export const THEME_STORAGE_KEY = 'umair-portfolio-theme-v3'
 export const DEFAULT_THEME: Theme = 'light'
 
 export function readStoredTheme(): Theme | null {
