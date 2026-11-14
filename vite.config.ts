@@ -3,5 +3,6 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  // Required for GitHub project pages: https://umairmehsud05.github.io/UmairPortfolio/
+  base: '/UmairPortfolio/',
 })
